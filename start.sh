@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source environment.sh
+source .env
 flask run

@@ -14,4 +14,4 @@ def create_app():
         # Import routes.
         from application import routes        # All the routes we'll be serving.
 
-        return app
+    return app
