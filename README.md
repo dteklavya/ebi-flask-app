@@ -17,7 +17,7 @@
     Service can be started in development mode or can be deployed using docker.
 
     - Deploy using Docker
-      - $ docker run --env-file .env -p 80:5000 kanakraj/ebi-genes-api
+      - $ docker run --env-file .env -p 80:5000 kanakraj/ebi-genes-api:v0
   
     - Development
       - After cloning the git repository:
