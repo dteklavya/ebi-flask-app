@@ -7,6 +7,13 @@
 
 ## Initialization
 
+    Get the code:
+    
+        $ git clone https://github.com/dteklavya/ebi-flask-app.git
+
+        $ cd ebi-flask-app
+
+    
     Service can be started in development mode or can be deployed using docker.
 
     - Deploy using Docker
