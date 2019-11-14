@@ -10,7 +10,7 @@
     Service can be started in development mode or can be deployed using docker.
 
     - Deploy using Docker
-      - $ docker run -p 80:5000 kanakraj/ebi-genes-api
+      - $ docker run --env-file .env -p 80:5000 kanakraj/ebi-genes-api
   
     - Development
       - After cloning the git repository:
@@ -27,6 +27,23 @@
 
     The solution has been implemented keeping following points in mind to ensure better scaling without significant changes to tooling or development practices:
 
-        - Dependency: All dependencies are explicitly declared and isolated.
-        - Configuration: Information such as credentials and other resources are retrived from environment so that these can be changed without changing the code.
-        - 
+        - Dependency: All dependencies are explicitly declared and isolated using virtual environment for Python.
+        - Configuration: Information such as database credentials and other values are retrived from environment so that these can be changed without changing the code. The .env file in repository has been added knowingly but it can be easily replaced with any config file while running the cotainer.
+        - Seperate build and run processes.
+        - Both error and access logs (of Gunicorn application server) are directed to STDOUT for centralized storage and retrieval.
+        - The app exports HTTP as a service by binding to a port (using Gunicorn), and listening to requests coming in on that port.
+
+## Testing
+
+    Unit tests for the application are included in the code base.
+
+## Documentation
+
+    The Python code has been appropriately commented using Docstrings for Class, methods, functions etc. Docstrings can be used in conjunction with document generation tools to auto generate feature rich documentation for codebase.
+
+    Every project must have space for documentation and must contain atleast following sections:
+        1. Tutorials: Simple steps that take the reader through to complete a project.
+        2. How-To: Guides that take the reader through the steps required to get s job done or solve a problem. Example, "How to Contribute".
+        3. References: Linkes to external and internal resources.
+        4. Explanations: Technical descriptions of the software and how to use it (Classes, functions, APIs, etc.).
+
