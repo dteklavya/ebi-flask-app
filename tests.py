@@ -1,15 +1,10 @@
 import unittest
 import json
-from os import environ, getenv, path
-from dotenv import load_dotenv
+from os import environ, getenv
 
 from application.models import db, Genes
 from application import *
 
-
-APP_ROOT = path.join(path.dirname(__file__))   # refers to application_top
-dotenv_path = path.join(APP_ROOT, '.env')
-load_dotenv(dotenv_path=dotenv_path)
 
 SQL_URI = getenv('SQLALCHEMY_DATABASE_URI')
 
